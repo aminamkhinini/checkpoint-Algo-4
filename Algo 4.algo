@@ -1,0 +1,20 @@
+ALGORITHM simple_sort
+VAR
+    T : ARRAY_OF integer[length];
+    i,j,current:integer;
+BEGIN
+ FOR i FROM 0 TO length-1 STEP 1  DO
+     write(T[i])
+ END_FOR
+
+    FOR i FROM 1 TO length DO
+        current:=T[i];
+        j:=i-1;
+        WHILE (j>=0 && T[j]>current) DO
+            T[j+1]:=T[j];
+            j:=j-1;
+            T[j+1]:=current;
+        END_WHILE
+    END_FOR
+    write("the sort array is",T[j])
+END
